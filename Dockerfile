@@ -1,7 +1,7 @@
 FROM debian:stretch
 
 RUN apt-get update && \
-	apt-get install --no-install-recommends --yes sqlite3 nodejs imagemagick ruby rails && \
+	apt-get install --no-install-recommends --yes sqlite3 nodejs imagemagick ruby rails git && \
 	apt-get clean && \
 	adduser --disabled-password --gecos "" frab
 
