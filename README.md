@@ -5,6 +5,10 @@ The provided `Dockerfile` creates a container with the default development insta
     git clone https://github.com/SubOptimal/frab-docker
     cd frab-docker
     docker build -t suboptimal/frab-docker .
+    
+In case you are behind a proxy start the build as
+
+    docker build --build-arg http_proxy=http://your.proxy.host:8080 -t suboptimal/frab-docker .
 
 ## start the container
 
