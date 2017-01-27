@@ -17,6 +17,7 @@ In case you are behind a proxy start the build as
 ## initial setup of frab
 
     # inside the container
+    bundle config github.https true
     ~/setup_frab.sh
 
 ## starting frab
