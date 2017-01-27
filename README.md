@@ -8,20 +8,25 @@ The provided `Dockerfile` creates a container with the default development insta
 
 ## start the container
 
-    docker run -ti -p 3000:3000 suboptimal/frab-docker su -l frab
+    docker run -ti -p 3000:3000 --name frab-devl-demo suboptimal/frab-docker su -l frab
 
-## run frab
-
-`frab` is not started automatically in case you want to replace the SQLite database file for testing purpose.
+## initial setup of frab
 
     # inside the container
-    ./run_frab.sh
+    ~/setup_frab.sh
 
-When frab is started navigate to [http://localhost:3000/](http://localhost:3000/) and login as `admin@example.org` with password `test123`.
+## starting frab
+
+`frab` is not started automatically when the container is started, in case you want to replace the SQLite database file for testing purpose.
+
+    # inside the container
+    ~/run_frab.sh
+
+As soon frab is started navigate to [http://localhost:3000/](http://localhost:3000/) and login as user `admin@example.org` with password `test123`.
 
 ## replace the SQLite database file
 
-The container must be running and frab should not be running.
+The container must be up and running, but frab must not be running.
 
     # on your host
     docker cp your_database.sqlite3 <your_container_id>:/home/frab/frab-master/db/development.sqlite3
