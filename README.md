@@ -17,7 +17,15 @@ In case you are behind a proxy start the build as
 ## initial setup of frab
 
     # inside the container
+    cd ~/frab-master
+    ~/setup_frab.sh
+
+In case you are behind a proxy 
+
+    # inside the container
+    cd ~/frab-master
     bundle config github.https true
+    export http_proxy=http://your.proxy.host:8080
     ~/setup_frab.sh
 
 ## starting frab
